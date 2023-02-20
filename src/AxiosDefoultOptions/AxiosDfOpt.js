@@ -6,5 +6,5 @@ let defaultConfig = {
         "Content-Type": "application/json",
     },
 };
-// defaultConfig['Authorization'] = (localStorage.getItem('token') ? "Token " + localStorage.getItem('token') : null)
+
 export const DefaultAPIInstance = axios.create(defaultConfig);
