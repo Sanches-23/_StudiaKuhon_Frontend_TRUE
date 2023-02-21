@@ -1,5 +1,7 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import LoginElement from "@/components/LoginElement.vue";
+
 </script>
 
 <template>
@@ -26,14 +28,12 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink class="nav-item nav-link" to="/faq">F.A.Q</RouterLink>
         </div>
       </div>
-<!--      <wishlist></wishlist>-->
-<!--      <login-popup></login-popup>-->
+      <!--      <wishlist></wishlist>-->
+            <LoginElement></LoginElement>
     </nav>
-   <RouterView />
+    <RouterView />
   </div>
 </template>
 
 <style scoped>
 </style>
-
-
