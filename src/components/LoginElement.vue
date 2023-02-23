@@ -1,10 +1,4 @@
 <template>
-<!--  <button v-if="userStore.authToken" type="button" class="btn btn-dark mx-3" @click="Loguoting">-->
-<!--    Logout-->
-<!--  </button>-->
-<!--  <button v-else type="button" class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
-<!--    Login-->
-<!--  </button>-->
 
   <button  type="button" class="btn btn-danger mx-3" @click="logout">
     Logout
@@ -12,7 +6,6 @@
   <button type="button" class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Login
   </button>
-
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
