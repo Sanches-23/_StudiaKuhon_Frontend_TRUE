@@ -16,7 +16,7 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-danger" @click="">FFFFF</button>
+<!--          <button type="button" class="btn btn-danger" @click="">FFFFF</button>-->
 
         </div>
       </section>

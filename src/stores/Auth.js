@@ -1,30 +1,30 @@
-import { defineStore } from "pinia";
+import {defineStore} from "pinia";
 import {DefaultAPIInstance} from "@/AxiosDefoultOptions/AxiosDfOpt";
 
-export const useUserStore = defineStore("authUser",{
+export const useUserStore = defineStore("authUser", {
     state: () => ({
         authUser: null,
-        FUCK_U_Token: null,
+        authToken: null,
     }),
     getters: {
-      user: (state) => state.authUser,
-        FUCK_U_Token: (state) => state.Token,
+        user: (state) => state.authUser,
+        authToken: (state) => state.Token,
     },
     actions: {
-        login(login, password) {
+        Login(login, password) {
             const url = "auth/token/login/";
-            const data = { username: login, password: password };
+            const data = {username: login, password: password};
             DefaultAPIInstance.post(url, data)
                 .then(response => {
                     this.Token = response.data.auth_token;
-                    alert(this.Token)
+                    // alert(this.Token)
                     localStorage.setItem('Token', this.Token)
                     DefaultAPIInstance.defaults.headers.common['Authorization'] = 'Token ' + this.Token
                 })
-                .catch(e => alert(e))
+            .catch(e => alert(e))
         },
 
-        logout() {
+        Logout() {
             const url = "auth/token/logout/"
             DefaultAPIInstance.post(url)
                 .then(() => {
@@ -35,18 +35,32 @@ export const useUserStore = defineStore("authUser",{
                 .catch(e => alert(e))
         },
 
-        // signUp(login, password) {
+        SignUp(email, login, password) {
+            const url = "auth/users/";
+            const data = { email: email, username: login, password: password };
+            DefaultAPIInstance.post(url, data)
+                .then(response => {
+                    this.Token = response.data.auth_token;
+                    alert(this.Token)
+                    localStorage.setItem('Token', this.Token)
+                    DefaultAPIInstance.defaults.headers.common['Authorization'] = 'Token ' + this.Token
+                })
+                .catch(e => alert(e))
+        },
+
+        // SignUp(email, login, password) {
         //     const url = "auth/users/";
-        //     const data = { username: login, password: password };
+        //     const data = { email: email, username: login, password: password };
         //     DefaultAPIInstance.post(url, data)
         //         .then(response => {
-        //             this.Token = response.data.auth_token;
-        //             alert(this.Token)
-        //             localStorage.setItem('Token', this.Token)
-        //             DefaultAPIInstance.defaults.headers.common['Authorization'] = 'Token ' + this.Token
-        //
+        //             // this.Token = response.data.auth_token;
+        //             alert(response)
+        //             // localStorage.setItem('Token', this.Token)
+        //             // DefaultAPIInstance.defaults.headers.common['Authorization'] = 'Token ' + this.Token
         //         })
+        //         // .catch(e => alert(e))
         // },
+
 
 
         // async fetchUser() {
