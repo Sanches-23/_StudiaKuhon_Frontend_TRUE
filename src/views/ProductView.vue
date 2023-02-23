@@ -1,6 +1,7 @@
 <template>
   <h1>Products</h1>
 
+
   <div class="row mx-5">
     <div class="col-8 border">
       <section style="background-color: #eee">
@@ -14,6 +15,9 @@
               <product-card :product="product"></product-card>
             </div>
           </div>
+
+<!--          <button type="button" class="btn btn-danger" @click="">FFFFF</button>-->
+
         </div>
       </section>
     </div>
@@ -23,8 +27,9 @@
 </template>
 
 <script>
-import {DefaultAPIInstance} from "../AxiosDefoultOptions/AxiosDfOpt";
-import ProductCard from "../components/ProductCard.vue";
+import {DefaultAPIInstance} from "@/AxiosDefoultOptions/AxiosDfOpt";
+import ProductCard from "@/components/ProductCard.vue";
+
 
 export default {
   name: "ProductView",
@@ -43,7 +48,6 @@ export default {
         this.products = response.data.results;
         this.next = response.data.next;
         this.previous = response.data.previous;
-        console.log(response.data);
       } catch (e) {
         console.log('err404');
       }

@@ -1,12 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import LoginElement from "@/components/LoginElement.vue";
+
 </script>
 
 <template>
 
   <div class="container-fluid text-center p-0">
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
-      <a class="navbar-brand" href="#">Studia Kuhon</a>
+      <a class="navbar-brand">Studia Kuhon</a>
       <button
           class="navbar-toggler"
           type="button"
@@ -26,14 +28,12 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink class="nav-item nav-link" to="/faq">F.A.Q</RouterLink>
         </div>
       </div>
-<!--      <wishlist></wishlist>-->
-<!--      <login-popup></login-popup>-->
+      <!--      <wishlist></wishlist>-->
+            <LoginElement></LoginElement>
     </nav>
-   <RouterView />
+    <RouterView />
   </div>
 </template>
 
 <style scoped>
 </style>
-
-
