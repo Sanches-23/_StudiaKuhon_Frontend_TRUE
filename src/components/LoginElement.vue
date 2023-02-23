@@ -6,7 +6,7 @@
 <!--    Login-->
 <!--  </button>-->
 
-  <button  type="button" class="btn btn-danger mx-3" @click="Loguoting">
+  <button  type="button" class="btn btn-danger mx-3" @click="logout">
     Logout
   </button>
   <button type="button" class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -22,9 +22,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input v-model="login" type="text" placeholder="login" class="my-1 input-group"/><br />
+          <input v-model="username" type="text" placeholder="username" class="my-1 input-group"/><br />
           <input v-model="password" type="text" placeholder="password" class="my-1 input-group"/><br />
-          <button @click="Logining" class="btn btn-primary mx-1" data-bs-dismiss="modal">Login</button>
+          <button @click="login" class="btn btn-primary mx-1" data-bs-dismiss="modal">Login</button>
         </div>
       </div>
     </div>
@@ -43,9 +43,9 @@
         </div>
         <div class="modal-body">
           <input v-model="email" type="text" placeholder="email" class="my-1 input-group"/><br />
-          <input v-model="login" type="text" placeholder="login" class="my-1 input-group"/><br />
+          <input v-model="username" type="text" placeholder="login" class="my-1 input-group"/><br />
           <input v-model="password" type="text" placeholder="password" class="my-1 input-group"/><br />
-          <button @click="Registration" class="btn btn-primary mx-1" data-bs-dismiss="modal">Sign up</button>
+          <button @click="register" class="btn btn-primary mx-1" data-bs-dismiss="modal">Sign up</button>
         </div>
       </div>
     </div>
@@ -65,19 +65,19 @@ export default {
   data(){
     return{
       email: null,
-      login: null,
+      username: null,
       password: null,
     }
   },
   methods: {
-    async Logining(){
-      await this.userStore.Login(this.login, this.password);
+    async login(){
+      await this.userStore.login(this.username, this.password);
     },
-    async Loguoting(){
-      await this.userStore.Logout();
+    async logout(){
+      await this.userStore.logout();
     },
-    async Registration(){
-      await this.userStore.SignUp(this.email, this.login, this.password);
+    async register(){
+      await this.userStore.register(this.email, this.username, this.password);
     }
   }
 }

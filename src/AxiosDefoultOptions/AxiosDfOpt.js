@@ -7,4 +7,7 @@ let defaultConfig = {
     },
 };
 
+const token = $cookies.get('token')
+if (token) defaultConfig.headers['Authorization'] = 'Token ' + token
+
 export const DefaultAPIInstance = axios.create(defaultConfig);

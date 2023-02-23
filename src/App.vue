@@ -8,7 +8,7 @@ import LoginElement from "@/components/LoginElement.vue";
 
   <div class="container-fluid text-center p-0">
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
-      <a class="navbar-brand" href="#">Studia Kuhon</a>
+      <a class="navbar-brand">Studia Kuhon</a>
       <button
           class="navbar-toggler"
           type="button"

@@ -29,8 +29,7 @@
 <script>
 import {DefaultAPIInstance} from "@/AxiosDefoultOptions/AxiosDfOpt";
 import ProductCard from "@/components/ProductCard.vue";
-// import {ref} from "vue";
-// export const count = ref(0);
+
 
 export default {
   name: "ProductView",
@@ -49,11 +48,6 @@ export default {
         this.products = response.data.results;
         this.next = response.data.next;
         this.previous = response.data.previous;
-        console.log(response.data);
-        // const
-
-
-
       } catch (e) {
         console.log('err404');
       }
