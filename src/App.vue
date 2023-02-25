@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
 import LoginElement from "@/components/LoginElement.vue";
+import WishlistView from "@/views/WishlistView.vue";
 
 </script>
 
@@ -28,7 +29,7 @@ import LoginElement from "@/components/LoginElement.vue";
           <RouterLink class="nav-item nav-link" to="/faq">F.A.Q</RouterLink>
         </div>
       </div>
-      <!--      <wishlist></wishlist>-->
+            <WishlistView></WishlistView>
             <LoginElement></LoginElement>
     </nav>
     <RouterView />
