@@ -5,7 +5,7 @@ export const useWishlistStore = defineStore("WishlistStore", {
     state: () => {
         return {
             showMessage: false,
-            message: "Дякуємо за ваше замовлення, наш менеджер зв'яжеться з вами трішки пізніше.",
+            wishlistMessage: "Дякуємо за ваше замовлення, наш менеджер зв'яжеться з вами трішки пізніше.",
             products: [],
         };
     },
