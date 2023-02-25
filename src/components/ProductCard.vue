@@ -9,7 +9,8 @@
           {{ product.description_shorted }}
         </p>
       </div>
-      <button type="button" class="btn btn-secondary" @click="Wishlist.add(product.id, product.title, product.description_shorted, product.main_photo)">Add to wishlist</button>
+      <button type="button" class="btn btn-secondary mx-2" @click="Wishlist.add(product.id, product.title, product.description_shorted, product.main_photo)">Add to wishlist</button>
+      <button type="button" class="btn btn-dark mx-2" @click="this.$router.push({name: 'product', params: { id: product.id }})">To product</button>
     </div>
   </div>
 </template>
