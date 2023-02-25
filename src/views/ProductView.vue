@@ -15,7 +15,8 @@
               <product-card :product="product"></product-card>
             </div>
           </div>
-<!--          для переключення сторінок списку-->
+
+          <!--          для переключення сторінок списку-->
           <button type="button" class="btn btn-danger mx-1" @click="">[===</button>
           <button type="button" class="btn btn-danger mx-1" @click="">===]</button>
 
