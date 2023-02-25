@@ -10,7 +10,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <br>
-        <p v-if="Wishlist.showMessage === true">{{ Wishlist.message }}</p>
+        <p v-if="Wishlist.showMessage === true">{{ Wishlist.wishlistMessage }}</p>
         <div class="modal-body">
           <div v-for="prod in Wishlist.get()" :key="prod">
             <wishlist-card :product="prod"></wishlist-card>

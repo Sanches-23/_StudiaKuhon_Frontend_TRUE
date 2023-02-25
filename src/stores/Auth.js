@@ -17,7 +17,6 @@ export const useUserStore = defineStore("authUser", {
                 })
             .catch(e => console.log(e))
         },
-
         logout() {
             const url = "auth/token/logout/"
             DefaultAPIInstance.post(url)
@@ -28,7 +27,6 @@ export const useUserStore = defineStore("authUser", {
                 })
                 .catch(e => console.log(e))
         },
-
         register(email, login, password) {
             const url = "auth/users/";
             const data = { email: email, username: login, password: password };

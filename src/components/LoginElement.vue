@@ -51,10 +51,6 @@ import {useUserStore} from "@/stores/Auth";
 
 export default {
   name: "LoginElement",
-  setup() {
-    const userStore = useUserStore();
-    return {userStore};
-  },
   data(){
     return{
       email: null,
@@ -72,7 +68,11 @@ export default {
     async register(){
       await this.userStore.register(this.email, this.username, this.password);
     }
-  }
+  },
+  setup() {
+    const userStore = useUserStore();
+    return {userStore};
+  },
 }
 </script>
 
