@@ -15,7 +15,7 @@ export const useUserStore = defineStore("authUser", {
                     $cookies.set('token', this.Token)
                     DefaultAPIInstance.defaults.headers.common['Authorization'] = 'Token ' + response.data.auth_token;
                 })
-            .catch(e => alert(e))
+            .catch(e => console.log(e))
         },
 
         logout() {
@@ -26,14 +26,14 @@ export const useUserStore = defineStore("authUser", {
                     $cookies.remove('token')
                     this.Token = null
                 })
-                .catch(e => alert(e))
+                .catch(e => console.log(e))
         },
 
         register(email, login, password) {
             const url = "auth/users/";
             const data = { email: email, username: login, password: password };
             DefaultAPIInstance.post(url, data)
-                .catch(e => alert(e))
+                .catch(e => console.log(e))
         },
     },
 });
