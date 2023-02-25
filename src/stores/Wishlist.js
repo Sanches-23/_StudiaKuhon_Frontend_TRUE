@@ -28,19 +28,16 @@ export const useWishlistStore = defineStore("WishlistStore", {
         },
         order() {
             const message = this.products.map(product => {
-                return `Дизайн: ${product.title}\nСсилка: /product/${product.id}/\n--------------------`;
+                return `Дизайн: ${product.title}\nСсилка: /product/${product.id}/\n-------------------------`;
+                /*уточнити про параметри, які потрібні*/
             }).join('\n');
             DefaultAPIInstance.post('order', {'message': message, 'user': true})
-                .catch(e => {
-                    return e;
-                    //         .catch(e => alert(e))
-                });
+                .catch(e => console.log(e));
             this.showMessage = true;
             this.products = [];
-
         },
         hideMessage() {
-            this.showMessage = false;
+            this.showMessage = false; /*хз...*/
         },
     },
     persist: true,

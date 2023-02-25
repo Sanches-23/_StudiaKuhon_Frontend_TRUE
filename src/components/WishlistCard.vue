@@ -1,5 +1,4 @@
 <template>
-
   <div class="card text-black px-3 my-2">
     <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
     <img :src="product.main_photo" class="card-img" :alt="product.title"/>
@@ -13,8 +12,6 @@
       </div>
     </div>
   </div>
-
-
 </template>
 
 <script>
@@ -36,11 +33,7 @@ export default {
     const Wishlist = useWishlistStore()
     return {Wishlist}
   },
-
-
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
