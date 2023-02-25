@@ -33,17 +33,10 @@ import WishlistCard from "@/components/WishlistCard.vue";
 export default {
   name: "WishlistView",
   components: {WishlistCard},
-  // data() {
-  //   return {
-  //     showMessage: false,
-  //     message: "Дякуюмо за ваше замовлення, наш менеджер зв’яжеться з вами трішки пізніше."
-  //   };
-  // },
   setup() {
     const Wishlist = useWishlistStore();
     return {Wishlist};
   },
 }
-
 </script>
 <style scoped></style>
