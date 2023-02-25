@@ -5,7 +5,7 @@ export const useWishlistStore = defineStore("WishlistStore", {
     state: () => {
         return {
             showMessage: false,
-            message: "Дякуюмо за ваше замовлення, наш менеджер зв’яжеться з вами трішки пізніше.",
+            message: "Дякуємо за ваше замовлення, наш менеджер зв'яжеться з вами трішки пізніше.",
             products: [],
         };
     },
@@ -28,8 +28,7 @@ export const useWishlistStore = defineStore("WishlistStore", {
         },
         order() {
             const message = this.products.map(product => {
-                return `Дизайн: ${product.title}\nСсилка: /product/${product.id}/\n-------------------------`;
-                /*уточнити про параметри, які потрібні*/
+                return `-------------------------\nДизайн: ${product.title}\nСсилка: http://localhost:8000/api/v1/products/${product.id}/\n-------------------------`;
             }).join('\n');
             DefaultAPIInstance.post('order', {'message': message, 'user': true})
                 .catch(e => console.log(e));
@@ -37,7 +36,7 @@ export const useWishlistStore = defineStore("WishlistStore", {
             this.products = [];
         },
         hideMessage() {
-            this.showMessage = false; /*хз...*/
+            this.showMessage = false;
         },
     },
     persist: true,

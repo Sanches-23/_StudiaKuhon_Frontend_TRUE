@@ -1,7 +1,6 @@
 <template>
   <button type="button" class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#Wishlistmodal"
           @click="Wishlist.hideMessage()">Wishlist
-    <!--якось кастильно hideMessage як на мене, бо це ж ціда функція, але хз...-->
   </button>
   <div class="modal fade" id="Wishlistmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
