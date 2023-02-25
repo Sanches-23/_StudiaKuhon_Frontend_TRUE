@@ -35,7 +35,22 @@
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
              data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <!--          <CustomOrder></CustomOrder>-->
+            <div>
+              <!--  left - need any img-->
+              <h1>Шукаєте індивідуальний підхід?</h1>
+              <p>Ми розробляємо наші проєкти, враховуючи особливості об’єкта, можливості та смаки замовника, його бачення та цілі.
+                Розробляємо проекти як частини об’єкту так і під ключ. </p>
+            </div>
+
+            <div class="row-cols-6">
+              <input v-model="firstName" type="text" placeholder="Ім'я" class="my-1 input"/><br/>
+              <input v-model="phoneNumber" type="text" placeholder="Номер телефона" class="my-1 input"/><br/>
+              <input v-model="email" type="text" placeholder="E-mail" class="my-1 input"/><br/>
+              <!--    <button @click="WishList.custOrder()" class="btn btn-dark mx-1" data-bs-dismiss="modal">Замовити консультацію</button>-->
+              <button @click="customOrder" class="btn btn-primary mx-1">Зробити
+                замовлення
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -45,28 +60,14 @@
 
   <!--  //////////////////////-->
 
-  <div>
-    <!--  left - need any img-->
-    <h1>Шукаєте індивідуальний підхід?</h1>
-    <p>Ми розробляємо наші проєкти, враховуючи особливості об’єкта, можливості та смаки замовника, його бачення та цілі.
-      Розробляємо проекти як частини об’єкту так і під ключ. </p>
-  </div>
 
-  <div class="row-cols-6">
-    <input v-model="firstName" type="text" placeholder="Ім'я" class="my-1 input"/><br/>
-    <input v-model="phoneNumber" type="text" placeholder="Номер телефона" class="my-1 input"/><br/>
-    <input v-model="email" type="text" placeholder="E-mail" class="my-1 input"/><br/>
-    <!--    <button @click="WishList.custOrder()" class="btn btn-dark mx-1" data-bs-dismiss="modal">Замовити консультацію</button>-->
-    <button @click="customOrder" class="btn btn-primary mx-1">Зробити
-      замовлення
-    </button>
-  </div>
 
 </template>
 
 <script>
 import {useUserStore} from "@/stores/Auth";
 import {DefaultAPIInstance} from "@/AxiosDefoultOptions/AxiosDfOpt";
+import Carousel from "../components/Carousel.vue";
 
 export default {
   name: "HomeView",
