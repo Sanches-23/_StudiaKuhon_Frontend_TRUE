@@ -30,7 +30,8 @@ export const useWishlistStore = defineStore("WishlistStore", {
             const message = this.products.map(product => {
                 return `-------------------------\nДизайн: ${product.title}\nСсилка: http://localhost:8000/api/v1/products/${product.id}/\n-------------------------`;
             }).join('\n');
-            DefaultAPIInstance.post('order', {'message': message, 'user': true})
+            let datetime = "\n Дата отриманна: " + new Date().toLocaleString();
+            DefaultAPIInstance.post('order', {'message': message + datetime, 'user': true})
                 .catch(e => console.log(e));
             this.showMessage = true;
             this.products = [];
