@@ -7,7 +7,7 @@ export const useUserStore = defineStore("authUser", {
     }),
     actions: {
         login(login, password) {
-            const url = "auth/token/login/";
+            const url = "auth/token/create/";
             const data = {username: login, password: password};
             DefaultAPIInstance.post(url, data)
                 .then(response => {
@@ -18,7 +18,7 @@ export const useUserStore = defineStore("authUser", {
             .catch(e => console.log(e))
         },
         logout() {
-            const url = "auth/token/logout/"
+            const url = "auth/token/destroy/"
             DefaultAPIInstance.post(url)
                 .then(() => {
                     delete DefaultAPIInstance.defaults.headers.common['Authorization']
@@ -27,11 +27,11 @@ export const useUserStore = defineStore("authUser", {
                 })
                 .catch(e => console.log(e))
         },
-        register(email, login, password) {
-            const url = "auth/users/";
-            const data = { email: email, username: login, password: password };
-            DefaultAPIInstance.post(url, data)
-                .catch(e => console.log(e))
-        },
+        // register(email, login, password) {
+        //     const url = "auth/users/";
+        //     const data = { email: email, username: login, password: password };
+        //     DefaultAPIInstance.post(url, data)
+        //         .catch(e => console.log(e))
+        // },
     },
 });

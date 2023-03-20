@@ -41,4 +41,5 @@ export const useWishlistStore = defineStore("WishlistStore", {
         },
     },
     persist: true,
+
 });

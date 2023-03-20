@@ -16,7 +16,8 @@
             <wishlist-card :product="prod"></wishlist-card>
           </div>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Продовжити купівлю</button>
-          <button v-if="Wishlist.get().length !== 0" @click="Wishlist.order()" class="btn btn-primary mx-1">Зробити
+          <button v-if="Wishlist.get() !== 0" @click="Wishlist.order()" class="btn btn-primary mx-1">Зробити
+<!--          <button v-if="Wishlist.get().length !== 0" @click="Wishlist.order()" class="btn btn-primary mx-1">Зробити-->
             замовлення
           </button>
         </div>
